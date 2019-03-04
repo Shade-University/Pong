@@ -13,8 +13,7 @@ public final class Settings {
     private static double paddleSpeed;
     private static double paddleHeight;
     private static double paddleWidth;
-
-    
+ 
     private static double windowHeight;
     private static double windowWidth;
     
@@ -31,8 +30,35 @@ public final class Settings {
         windowWidth = 1200;
     }
     
+    public static void setBallSpeed(double ballSpeed) {
+        Settings.ballSpeed = ballSpeed;
+    }
+
+    public static void setBallSize(double ballSize) {
+        Settings.ballSize = ballSize;
+    }
+
+    public static void setPaddleSpeed(double paddleSpeed) {
+        Settings.paddleSpeed = paddleSpeed;
+    }
+
+    public static void setPaddleHeight(double paddleHeight) {
+        Settings.paddleHeight = paddleHeight;
+    }
+
+    public static void setPaddleWidth(double paddleWidth) {
+        Settings.paddleWidth = paddleWidth;
+    }
+
+    public static void setWindowHeight(double windowHeight) {
+        Settings.windowHeight = windowHeight;
+    }
+
     //TODO settery na konfigurovatelné nastavení
     //TODO Metody na easy, medium, hard => opponentPaddleSpeed
+    public static void setWindowWidth(double windowWidth) {    
+        Settings.windowWidth = windowWidth;
+    }
 
     public static double getBallSize() {
         return ballSize;

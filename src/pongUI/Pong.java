@@ -1,9 +1,8 @@
 package pongUI;
 
-import pongLogic.Settings;
+
 import pongLogic.GameLogic;
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -40,6 +39,12 @@ public class Pong extends Application {
             root.getChildren().clear();
             root.getChildren().add(settingsScreen);
             settingsScreen.requestFocus();
+        });
+        
+        settingsScreen.setOnEnd(() -> {
+            root.getChildren().clear();
+            root.getChildren().add(welcomeScreen);
+            welcomeScreen.requestFocus();
         });
 
         game.setOnWinConsumer((p) -> {

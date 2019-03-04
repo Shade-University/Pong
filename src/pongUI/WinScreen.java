@@ -7,36 +7,34 @@ import javafx.geometry.Pos;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import javafx.util.Duration;
-import pongLogic.GameLogic;
 import pongLogic.Settings;
 
 /**
  *
  * @author Tomáš Vondra
  */
-public class WinScreen extends Pane {
+public final class WinScreen extends Pane {
 
     private final Text header;
     private final Text restartText;
     private final Text quitText;
-
-    private String winner;
     
     private Runnable onRestart;
 
     public void setOnRestart(Runnable onRestart) {
         this.onRestart = onRestart;
     }
+
+    public Runnable getOnRestart() {
+        return onRestart;
+    }
     
 
     public void setWinner(String winner) {
-        this.winner = winner;
         header.setText(winner + " win");
         header.setX((getPrefWidth() - header.getBoundsInLocal().getWidth()) / 2);
         header.setY(header.getBoundsInLocal().getHeight() + 10);

@@ -10,8 +10,8 @@ import javafx.beans.property.SimpleDoubleProperty;
  */
 public abstract class GameObject {
 
-    private DoubleProperty xProperty = new SimpleDoubleProperty(0);
-    private DoubleProperty yProperty = new SimpleDoubleProperty(0);
+    private final DoubleProperty xProperty = new SimpleDoubleProperty(0);
+    private final DoubleProperty yProperty = new SimpleDoubleProperty(0);
     //DoubleProperty pro bind
 
     public DoubleProperty getxProperty() {

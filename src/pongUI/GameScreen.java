@@ -19,7 +19,7 @@ import pongObjects.Paddle;
  *
  * @author Tomáš Vondra
  */
-public class GameScreen extends Pane {
+public final class GameScreen extends Pane {
 
     private final Canvas canvas;
     private final GraphicsContext gc;
