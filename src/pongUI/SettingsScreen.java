@@ -32,8 +32,8 @@ public final class SettingsScreen extends GridPane {
     private final TextField txtFieldBallSize;
     private final TextField txtFieldPaddleSpeed;
     private final TextField txtFieldPaddleHeight;
-    private final TextField txtFieldWindowWidth;
-    private final TextField txtFieldWindowHeight;
+//    private final TextField txtFieldWindowWidth;
+//    private final TextField txtFieldWindowHeight;
     
     public SettingsScreen() {
         this.setPrefSize(Settings.getWindowWidth(),
@@ -53,10 +53,10 @@ public final class SettingsScreen extends GridPane {
         lblPaddleSpeed.setTextFill(Color.WHITE);
         Label lblPaddleHeight = new Label("Velikost pálky");
         lblPaddleHeight.setTextFill(Color.WHITE);
-        Label lblWindowHeight = new Label("Velikost okna");
+        /*Label lblWindowHeight = new Label("Velikost okna");
         lblWindowHeight.setTextFill(Color.WHITE);
         Label lblWindowWidth = new Label("Šířka okna");
-        lblWindowWidth.setTextFill(Color.WHITE);
+        lblWindowWidth.setTextFill(Color.WHITE); */
 
         txtFieldBallSpeed = new TextField(Double.toString(
                 Settings.getBallSpeed()));
@@ -66,10 +66,10 @@ public final class SettingsScreen extends GridPane {
                 Settings.getPaddleSpeed()));
         txtFieldPaddleHeight = new TextField(Double.toString(
                 Settings.getPaddleHeight()));
-        txtFieldWindowWidth = new TextField(Double.toString(
-                Settings.getWindowWidth()));
-        txtFieldWindowHeight = new TextField(Double.toString(
-                Settings.getWindowHeight()));
+//        txtFieldWindowWidth = new TextField(Double.toString(
+//                Settings.getWindowWidth()));
+//        txtFieldWindowHeight = new TextField(Double.toString(
+//                Settings.getWindowHeight()));
 
         Button btnOk = new Button("Ok");
         btnOk.setOnAction(e -> {
@@ -96,10 +96,10 @@ public final class SettingsScreen extends GridPane {
         this.add(lblPaddleHeight, 2, 1);
         this.add(txtFieldPaddleHeight, 3, 1);
 
-        this.add(lblWindowWidth, 0, 2);
-        this.add(txtFieldWindowWidth, 1, 2);
-        this.add(lblWindowHeight, 2, 2);
-        this.add(txtFieldWindowHeight, 3, 2);
+//        this.add(lblWindowWidth, 0, 2);
+//        this.add(txtFieldWindowWidth, 1, 2);
+//        this.add(lblWindowHeight, 2, 2);
+//        this.add(txtFieldWindowHeight, 3, 2);
 
         this.add(btnOk, 0, 3, 2, 3);
         this.add(btnCancel, 2, 3, 3, 3);
@@ -130,8 +130,8 @@ public final class SettingsScreen extends GridPane {
         Settings.setBallSpeed(Double.parseDouble(txtFieldBallSpeed.getText()));
         Settings.setPaddleHeight(Double.parseDouble(txtFieldPaddleHeight.getText()));
         Settings.setPaddleSpeed(Double.parseDouble(txtFieldPaddleSpeed.getText()));
-        Settings.setWindowWidth(Double.parseDouble(txtFieldWindowWidth.getText()));
-        Settings.setWindowHeight(Double.parseDouble(txtFieldWindowHeight.getText()));
+//        Settings.setWindowWidth(Double.parseDouble(txtFieldWindowWidth.getText()));
+//        Settings.setWindowHeight(Double.parseDouble(txtFieldWindowHeight.getText()));
     }
 
 }

@@ -10,7 +10,7 @@ import pongLogic.Settings;
 public class Ball extends GameObject {
 
     private double angleX;
-    private double angleY; //TODO Udělat úhel v radiánech
+    private double angleY;
     //Momentálně jen 45 stupňů
 
     public double getAngleY() {

@@ -38,7 +38,8 @@ public class GameLogic {
         playerPaddle.setY((Settings.getWindowHeight() / 2)
                 - (Settings.getPaddleHeight() / 2));
 
-        opponentPaddle.setX((Settings.getWindowWidth() - Settings.getPaddleWidth()));
+        opponentPaddle.setX((Settings.getWindowWidth() 
+                - Settings.getPaddleWidth()));
         opponentPaddle.setY((Settings.getWindowHeight() / 2)
                 - (Settings.getPaddleHeight() / 2));      
     }
@@ -128,10 +129,10 @@ public class GameLogic {
 
         boolean ballHitEdge;
         if (paddle == playerPaddle) {
-            ballHitEdge = ball.getX() + Settings.getBallSize()
+            ballHitEdge = ball.getX()
                     <= 10 + Settings.getPaddleWidth();
         } else {
-            ballHitEdge = ball.getX() + Settings.getBallSize()
+            ballHitEdge = ball.getX()
                     >= Settings.getWindowWidth() - 10 - Settings.getPaddleWidth();
         } //Zjisti, pokud je míček na místě, kde by měla být pálka
         //TODO 10 je mezera od kraje => do settings
@@ -148,7 +149,8 @@ public class GameLogic {
             if (paddle == playerPaddle) {
                 ball.setX(10 + Settings.getPaddleWidth() + Settings.getBallSize());
             } else {
-                ball.setX(Settings.getWindowWidth() - 10 - Settings.getPaddleWidth() - Settings.getBallSize());
+                ball.setX(Settings.getWindowWidth() - 10 
+                        - Settings.getPaddleWidth() - Settings.getBallSize());
             } //vrať míček do okna
         } else if (ball.getX() < 0 || ball.getX() > Settings.getWindowWidth()) {
             if (paddle == playerPaddle) {
@@ -173,13 +175,16 @@ public class GameLogic {
     }
 
     public void Restart() {
+        playerPaddle.setMovement(Paddle.Movement.NONE);
         playerPaddle.setX(10);
         playerPaddle.setY((Settings.getWindowHeight() / 2)
                 - (Settings.getPaddleHeight() / 2));
 
-        opponentPaddle.setX((Settings.getWindowWidth() - Settings.getPaddleWidth()));
+        opponentPaddle.setX((Settings.getWindowWidth() 
+                - Settings.getPaddleWidth()));
         opponentPaddle.setY((Settings.getWindowHeight() / 2)
                 - (Settings.getPaddleHeight() / 2));
+        opponentPaddle.setMovement(Paddle.Movement.NONE);
 
         playerPaddle.setScore(0);
         opponentPaddle.setScore(0);

@@ -40,10 +40,12 @@ public final class GameScreen extends Pane {
                 Settings.getWindowHeight());
         gc = canvas.getGraphicsContext2D();
 
-        ball = new Circle(Settings.getBallSize() / 2);
+        ball = new Circle();
+        ball.radiusProperty().bind(Settings.ballSize.divide(2));
         ball.setFill(Color.WHITE);
-        player = new Rectangle(Settings.getPaddleWidth(),
-                Settings.getPaddleHeight());
+        player = new Rectangle();
+        player.heightProperty().bind(Settings.paddleHeight);
+        player.widthProperty().bind(Settings.paddleWidth);
         player.setFill(Color.WHITE);
         opponent = new Rectangle(Settings.getPaddleWidth(),
                 Settings.getPaddleHeight());
